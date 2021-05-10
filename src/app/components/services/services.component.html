@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center display-4 my-5 text-light">Aprende de nuestros servicios</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div *ngFor="let servicio of servicios" class="col">
+            <div class="card h-100 shadow mb-5 rounded-3 bg-dark text-light">
+                <img src="../../../assets/{{servicio.img}}" class="card-img-top img-card-std" alt="{{servicio.img}}">
+                <div class="card-body">
+                    <h4 class="card-title text-center">{{servicio.servicio}}</h4>
+                    <p class="card-text">{{servicio.descripcion}}</p>
+                </div>
+                <div class="card-footer">
+                    <p class="card-text text-center" *ngIf="!(servicio.servicio == 'Resolución de problemas' || servicio.servicio == 'Mejora de componentes' || servicio.servicio == 'Reemplazo de partes dañadas' )"><b>Costo:</b> {{servicio.precio | currency: 'MXN'}}</p>
+                    <p class="card-text text-center" *ngIf="servicio.servicio == 'Resolución de problemas' || servicio.servicio == 'Mejora de componentes' || servicio.servicio == 'Reemplazo de partes dañadas'"><b>Costo:</b> {{servicio.precio}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

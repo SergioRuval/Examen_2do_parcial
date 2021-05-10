@@ -1,0 +1,8 @@
+p {
+    text-align: justify;
+}
+
+.img-card-std {
+    height: 15rem;
+    object-fit: cover;
+}

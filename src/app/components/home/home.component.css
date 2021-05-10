@@ -1,0 +1,13 @@
+.img-carousel {
+    height: 33rem;
+    object-fit: cover;
+}
+
+p {
+    text-align: justify;
+}
+
+.img-text {
+    height: 15rem;
+    object-fit: cover;
+}

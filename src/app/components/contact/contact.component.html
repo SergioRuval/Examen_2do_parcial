@@ -1,0 +1,38 @@
+<div class="container text-light">
+    <h1 class="text-center display-4 my-5">Envíanos tus preguntas</h1>
+    <div class="row">
+        <div class="col d-none d-md-block text-center">
+            <img src="../../../assets/scews.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-7">
+            <form>
+                <div class="mb-3 row">
+                  <div class="col">
+                    <label for="nombre" class="form-label col">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" (keypress)="validaNombre($event)">
+                    <div class="text-danger fst-italic fs-6 my-1 msg p-1 text-center" *ngIf="isName">
+                      {{nMsg}}
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label for="email" class="form-label col">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" (keypress)="validaEmail($event)">
+                    <div class="text-danger fst-italic fs-6 my-1 msg p-1 text-center" *ngIf="isEmail">
+                      {{eMsg}}
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="msg" class="form-label">Tu mensaje</label>
+                    <textarea name="mensaje" id="msg" cols="30" rows="7" class="form-control" placeholder="Hola, soy {{nombre}}"></textarea>
+                </div>
+                <div class="text-danger fst-italic fs-6 mb-3 msg p-2 text-center" *ngIf="isMsg">
+                  {{msg}}
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary" (click)="validar()">Enviar</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
